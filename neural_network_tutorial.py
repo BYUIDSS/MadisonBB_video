@@ -22,4 +22,6 @@ model = tf.keras.models.Sequential([ # Sequential means 1 by 1 in order
   tf.keras.layers.Dense(10) # Make another dense layer of 10 neurons (Digit 0 through digit 9). """This is the output layer.""""
 ])
 
+predictions = model(x_train[:1]).numpy() 
+print(predictions)
 
