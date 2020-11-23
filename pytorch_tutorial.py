@@ -1,11 +1,12 @@
 import torch
 
+#%%
 data = torch.randn(10, 10, 3)
 
 # make a tensor with random numbers
 tensor_rand = torch.rand(5,3)
 print(tensor_rand)
-
+#%%
 # make a tensor filled with zeros that are of long type
 tensor1 = torch.empty(5,3, dtype=torch.long)
 print(tensor1)

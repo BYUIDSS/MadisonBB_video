@@ -22,6 +22,9 @@ model = tf.keras.models.Sequential([ # Sequential means 1 by 1 in order
   tf.keras.layers.Dense(10) # Make another dense layer of 10 neurons (Digit 0 through digit 9). """This is the output layer.""""
 ])
 
-predictions = model(x_train[:1]).numpy() 
-print(predictions)
+sparse_categorical_crossentropy = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+
+model.compile(optimizer="adam", loss=sparse_categorical_crossentropy, metrics=["accuracy"])
+
+model.fit(x=x_train, y=y_train, batch_size=64, epochs=10)
 
