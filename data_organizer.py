@@ -1,3 +1,11 @@
+'''
+
+This script separates mp4 files and npy files from each other if they're mixed
+in the same folder
+
+'''
+
+
 import shutil, os
 
 print("current working directory: ", os.getcwd())
@@ -16,7 +24,7 @@ if os.path.exists(original) and os.path.exists(mp4_path) and os.path.exists(npy_
 
         if filename.endswith(".npy"):
              shutil.move(original+"\\"+filename, npy_path)
-             
+
     print("Done moving files!")
 else:
     print("Paths don't exist")
